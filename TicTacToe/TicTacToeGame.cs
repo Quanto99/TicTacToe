@@ -30,6 +30,11 @@ namespace TicTacToe
             {
                 DisplayBoard(playerPositions);
 
+                //System.Console.WriteLine("\n\n" + playerPositions[0].ToString("X"));  // display player position 1 in hex
+                //System.Console.WriteLine(playerPositions[1].ToString("X"));         // display player position 2 in hex
+                //System.Console.WriteLine("\n" + playerPositions[0].ToString("D"));  // display player position 1 in decimal
+                //System.Console.WriteLine(playerPositions[1].ToString("D"));         // display player position 2 in decimal
+
                 #region Check for End Game
                 if (EndGame(winner, turn, input))
                 {
@@ -137,7 +142,7 @@ namespace TicTacToe
                     position = 1 << shifter;
 
                     // Take the current player cells and OR them to set the new position as well.
-                    // Since currentPlayter is either 1 or 2 you subtract one to use currentPlayer
+                    // Since currentPlayer is either 1 or 2 you subtract one to use currentPlayer
                     // as an index in a 0-based array.
                     playerPositions[currentPlayer - 1] |= position;
 
@@ -164,7 +169,7 @@ namespace TicTacToe
             string[] borders = {"|","|","\n---+---+---\n","|","|","\n---+---+---\n","|","|",""};
 
             // Display the current board
-            int border = 0; // set the first border (border[0] = "/")
+            int border = 0; // set the first border (border[0] = "|")
 
 #if CSHARP2
             System.Console.Clear();
